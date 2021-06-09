@@ -1,7 +1,31 @@
 
-annotations <- fromJSON(file = '/dataset/coco-2017/annotations/instances_train2017.json')
-image_path <- '/dataset/coco-2017/train2017'
+load_train_batch <- function(config)
+{
+  anno_path <- config$input_json
+
+  annotations <- fromJSON(file = anno_path)
+  image_path <- config$image_path
+  if (length(image_path) <= 0)
+  {
+    tmp <- strsplit(anno_path, split = '/')
+    lentmp <- length(tmp[[1]])
+    list_tmp <- tmp[[1]][-c(lentmp, lentmp - 1)]
+    anno_parent <- paste(list_tmp[[1]], collapse = "/");
+    image_path <- sprintf("%s/%s%s", anno_parent, config$type, config$subtype)
+  }
+
+
+}
 full_path <- sprintf("%s/%012d.jpg", image_path, annotations$annotations[[1]]$image_id)
+
+img <- image_draw(img_magick)
+rect(20, 20, 200, 100, border = "red", lty = "dashed", lwd = 5)
+abline(h = 300, col = 'blue', lwd = '10', lty = "dotted")
+text(30, 250, "Hoiven-Glaven", family = "monospace", cex = 4, srt = 90)
+palette(rainbow(11, end = 0.9))
+symbols(rep(200, 11), seq(0, 400, 40), circles = runif(11, 5, 35),
+        bg = 1:11, inches = FALSE, add = TRUE)
+dev.off()
 
 image <- ocv_read(full_path)
 plot(image)
