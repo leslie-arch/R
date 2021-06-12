@@ -16,22 +16,21 @@ load_train_batch <- function(config)
 
 
 }
-full_path <- sprintf("%s/%012d.jpg", image_path, annotations$annotations[[1]]$image_id)
 
-img <- image_draw(img_magick)
-rect(20, 20, 200, 100, border = "red", lty = "dashed", lwd = 5)
-abline(h = 300, col = 'blue', lwd = '10', lty = "dotted")
-text(30, 250, "Hoiven-Glaven", family = "monospace", cex = 4, srt = 90)
-palette(rainbow(11, end = 0.9))
-symbols(rep(200, 11), seq(0, 400, 40), circles = runif(11, 5, 35),
-        bg = 1:11, inches = FALSE, add = TRUE)
-dev.off()
+#img <- image_draw(img_magick)
+#rect(20, 20, 200, 100, border = "red", lty = "dashed", lwd = 5)
+#abline(h = 300, col = 'blue', lwd = '10', lty = "dotted")
+#text(30, 250, "Hoiven-Glaven", family = "monospace", cex = 4, srt = 90)
+#palette(rainbow(11, end = 0.9))
+#symbols(rep(200, 11), seq(0, 400, 40), circles = runif(11, 5, 35),
+#        bg = 1:11, inches = FALSE, add = TRUE)
+#dev.off()
+#
+#image <- ocv_read(full_path)
+#plot(image)
 
-image <- ocv_read(full_path)
-plot(image)
-
-library(keras)
-
+#library(keras)
+cifar_demo <- function(){
 # Parameters --------------------------------------------------------------
 
 batch_size <- 32
@@ -133,4 +132,5 @@ if(!data_augmentation){
     validation_data = list(x_test, y_test)
   )
   
+}
 }

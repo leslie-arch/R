@@ -4,7 +4,18 @@ Description: a framework for VQA
 Version: 0.1
 Authors@R: person("First", "Last", email = "first.last@example.com",
                   role = c("aut", "cre"))
-Depends: R (>= 3.6.0), argparse
+Depends:
+    R (>= 3.6.0),
+    argparse,
+    keras,
+    tensorflow,
+    argparse,
+    yaml,
+    R6,
+    rjson,
+    itertools
 License: MIT
 LazyData: false
 Imports: 
+RoxygenNote: 7.1.1
+Encoding: UTF-8

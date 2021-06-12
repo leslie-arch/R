@@ -1,4 +1,4 @@
-# read argument from command line
+#' read argument from command line
 #' A Honolulu_White Function
 #'
 #' This function was written by a person with little experieces in R package generating from Honolulu.
@@ -23,6 +23,7 @@ rebuild_params <- function(params)
   #group1 = parser$add_argument_group('group1', 'group1 description')
   #group1$add_argument('foo', help='foo help')
 
-  args <- parser$parse_args(params)
-  return(args)
+  #args <- parser$parse_args(params)
+  #return(args)
+  print("rebuild parameters")
 }
