@@ -2,8 +2,9 @@ Package: visionarch
 Title: VQA architecture
 Description: a framework for VQA
 Version: 0.1
-#Authors@R: leslie_arch
-Author: Leslie-arch
-Depends: R (>= 3.6.0)
+Authors@R: person("First", "Last", email = "first.last@example.com",
+                  role = c("aut", "cre"))
+Depends: R (>= 3.6.0), argparse
 License: MIT
-LazyData: true
+LazyData: false
+Imports: 

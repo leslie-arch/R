@@ -8,8 +8,8 @@ start <- function()
 
 }
 
-arg_list <- commandArgs(trailingOnly = TRUE)
+params <- commandArgs(trailingOnly = TRUE)
 #arg_list
 
-args <- read_args(arg_list)
+args <- rebuild_params(params)
 print(args)
