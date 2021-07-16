@@ -3,16 +3,11 @@
 root <- getwd()
 setwd(root)
 
-start <- function()
+source('rcnn_argumentation.R')
+main <- function()
 {
-
+  args <- parse_args()
+  sprintf("start with config:\n[%s]", str(args))
 }
 
-params <- function()
-{
-  params <- commandArgs(trailingOnly = TRUE)
-  #arg_list
-
-  args <- rebuild_params("-d mscoco")
-  print(args)
-}
+main()

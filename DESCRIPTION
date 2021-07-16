@@ -1,4 +1,4 @@
-Package: visionarch
+Package: vqar
 Title: VQA architecture
 Description: a framework for VQA
 Version: 0.1
@@ -6,6 +6,9 @@ Authors@R: person("First", "Last", email = "first.last@example.com",
                   role = c("aut", "cre"))
 Depends:
     R (>= 3.6.0),
+License: MIT
+LazyData: false
+Imports:
     argparse,
     keras,
     tensorflow,
@@ -14,8 +17,6 @@ Depends:
     R6,
     rjson,
     itertools
-License: MIT
-LazyData: false
-Imports: 
+    configr
 RoxygenNote: 7.1.1
 Encoding: UTF-8
