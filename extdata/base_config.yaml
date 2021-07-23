@@ -345,6 +345,22 @@ TEST:
 # different methods)
         SCORING_METHOD_BETA: 1.0
 
+# ---------------------------------------------------------------------------- #
+# Datasets options
+# ---------------------------------------------------------------------------- #
+DATASETS:
+    DIR: ''
+    CLEVR_MINI:
+        image: 'CLEVR_mini/images'
+        anns: 'CLEVR_mini/CLEVR_mini_coco_anns.json'
+
+    CLEVR_ORIGINAL_TRAIN:
+        IMAGE: 'CLEVR_v1.0/images/train'
+        ANNS: 'CLEVR_v1.0/scenes/CLEVR_train_scenes.json'
+
+    CLEVR_ORIGINAL_VAL:
+        IMAGE: 'CLEVR_v1.0/images/val'
+        ANNS: 'CLEVR_v1.0/scenes/CLEVR_val_scenes.json'
 
 # ---------------------------------------------------------------------------- #
 # Model options
@@ -934,7 +950,7 @@ EXPECTED_RESULTS_EMAIL: ''
 
 # ------------------------------
 # Data directory
-DATA_DIR: 'data/mask_rcnn'
+#DATA_DIR: 'data/mask_rcnn'
 
 # [Deprecate]
 POOLING_MODE: 'crop'

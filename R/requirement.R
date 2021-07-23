@@ -1,4 +1,4 @@
-required_packages <- c("keras", "tensorflow", "reticulate", "argparse", "yaml", "R6", "rjson", "itertools")
+required_packages <- c("keras", "tensorflow", "reticulate", "argparse", "yaml", "R6", "rjson", "itertools", 'logging')
 installed_packages <- installed.packages()
 uninstalled_packages <- setdiff(required_packages, installed_packages)
 
