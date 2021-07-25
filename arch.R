@@ -6,6 +6,7 @@ setwd(root)
 source('R/rcnn_argumentation.R')
 source('R/log_utils.R')
 source('R/config_utils.R')
+source('R/roidb.R')
 
 .fname <- function()
 {
@@ -30,9 +31,14 @@ main <- function()
   {
     cfg_file = args$cfg_file
   }
-  print(cfg_file)
-  init_config_with_file(cfg_file)
 
+  cfg <- init_config_with_file(cfg_file)
+  cfg <- adjust_config_with_args(cfg, args)
+
+  #message(cfg)
+
+  # Dataset
+  roidb <- roidb_for_training(cfg)
 }
 
 if (! interactive())
