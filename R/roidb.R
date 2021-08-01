@@ -9,6 +9,5 @@ roidb_for_training <- function(cfg)
     roidb <- new_clevr_dataset(n, cfg)
   }
 
-
   return(roidb)
 }

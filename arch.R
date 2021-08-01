@@ -35,10 +35,16 @@ main <- function()
   cfg <- init_config_with_file(cfg_file)
   cfg <- adjust_config_with_args(cfg, args)
 
-  #message(cfg)
-
   # Dataset
   roidb <- roidb_for_training(cfg)
+  print(names(roidb))
+  print('---------------------------')
+
+  keys <- valid_cached_keys(roidb)
+  print(keys)
+  print('---------------------------')
+
+  get_roidb(roidb)
 }
 
 if (! interactive())

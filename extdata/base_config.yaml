@@ -358,6 +358,8 @@ DATASETS:
     CLEVR_ORIGINAL_VAL:
         IMAGE: 'CLEVR_v1.0/images/val'
         ANNS: 'CLEVR_v1.0/scenes/CLEVR_val_scenes.json'
+CLEVR:
+    COMP_CAT: TRUE
 
 # ---------------------------------------------------------------------------- #
 # Model options
@@ -964,3 +966,6 @@ DEBUG: FALSE
 
 # [Infered value]
 R_VERSION_LESS_THAN_363: FALSE
+
+# Data Loader
+DATA_LOADER: []

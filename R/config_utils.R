@@ -30,15 +30,15 @@ update_config <- function(base, seted)
 adjust_config_with_args <- function(cfg, args)
 {
   message("--------------------------", 'adjust config')
-  #print(typeof(cfg$TRAIN$DATSETS))
+
   if ('clevr' %in% args$dataset)
   {
     cfg$TRAIN$DATASETS <- list('clevr_mini')
-    #print(typeof(cfg$TRAIN$DATSETS))
-    cfg$TRAIN$SCALES = c(320)
+    cfg$TRAIN$SCALES = list(320)
 
-    cfg$DATASETS$DIR <- paste0(getwd(), '/data/mask_rcnn')
-    message(cfg$DATASETS$DIR)
+    cfg$DATASETS$DIR <- paste0(getwd(), '/data/raw')
+    cfg$DATA_DIR <- paste0(getwd(), '/data/mask_rcnn')
+
     cfg$MODEL$NUM_CLASSES <- ifelse(args$clear_comp_cat, 49, 4)
     cfg$MODEL$COMP_CAT <- ifelse(args$clear_comp_cat, TRUE, FALSE)
   }
