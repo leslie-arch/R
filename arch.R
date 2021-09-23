@@ -40,11 +40,12 @@ main <- function()
   print(names(roidb))
   print('---------------------------')
 
-  keys <- valid_cached_keys(roidb)
-  print(keys)
-  print('---------------------------')
-
-  get_roidb(roidb)
+  roidb_t <- get_roidb(roidb,
+                       gt_cache = TRUE,
+                       proposal_file = NULL,
+                       min_proposal_size = 2,
+                       proposal_limit = -1,
+                       crowd_filter_thresh = 0)
 }
 
 if (! interactive())
